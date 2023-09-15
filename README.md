@@ -28,13 +28,15 @@ Featuring an **open**-ish world and a **story**, you can combine idling and clic
 
 ## Roadmap overview
 
-v0.01 
+1. Draft implementation of idler mode with a couple non-cobat skills.
+2. 
 
 
 ### Detailed roadmap
 
 #### v0.01, status: active development
 
+1. 
 
 
 ## Changelog
