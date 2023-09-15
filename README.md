@@ -1,4 +1,4 @@
-# Melrune-3D
+# Miryven's Rupture
 
 ## Contents
 
@@ -11,7 +11,7 @@
 
 ## Description
 
-A game inspired by **Melvor Idle** and **Runescape**. I loved the grinding that both games require, but Runescape lacks the idle aspect, while Melvor is purely idle, with frequent user input being necessery only at the very start. Melrune is an attempt to combine aspects of both games, as well as introduce new elements to the exprience, so that it can be enjoyed by idle and active players alike.
+A game inspired by **Melvor Idle** and **Runescape**. I loved the grinding that both games require, but Runescape lacks the idle aspect, while Melvor is purely idle, with frequent user input being necessery only at the very start. Miryven's Rupture is an attempt to combine aspects of both games, as well as introduce new elements to the exprience, so that it can be enjoyed by idle and active players alike.
 
 ## Game modes
 
