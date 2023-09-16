@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://c03ncrc15uwlb"]
+
+[ext_resource type="VideoStream" path="res://0001-0150.ogv" id="1_fr4ll"]
+
+[node name="splash screen" type="VideoStreamPlayer"]
+anchors_preset = -1
+anchor_right = 0.944
+anchor_bottom = 1.679
+offset_left = 423.0
+offset_top = -8.0
+offset_right = -301.48
+offset_bottom = -733.32
+stream = ExtResource("1_fr4ll")
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.39
+anchor_right = 1.383
+anchor_bottom = 1.0
+offset_left = 0.320007
+offset_top = 2.0
+offset_right = 0.296021
+offset_bottom = 6.0

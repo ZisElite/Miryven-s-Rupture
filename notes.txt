@@ -1,0 +1,27 @@
+Minning progression:
+copper, zinc, tin -> iron, coal -> bauxite -> silver, gold -> mithril -> adamantium -> elementium, runite -> magick -> pure runite -> dragon bones ->
+
+Smelting progression:
+brass, bronze, tin, zinc -> copper -> iron -> steel, alumina -> titanium, gold, silver -> mithril, electrum -> adamantine, adamantium -> elementium, lesser runes -> lesser infused runes, infused elementium -> activated magicka -> greater runes -> dragonic ->
+
+Smelting recipes:
+copper + tin = bronze bar
+copper + zinc = brass bar
+copper + copper = copper bar
+iron + iron = iron bar
+iron + coal = steel bar
+alumina + electricity = aluminium bar
+titanium + magnisium = titanium bar
+gold = gold bar
+silver = silver bar
+mithril + coal = mithril bar
+silver + gold = electrum bar
+adamantium + coal = adamantite bar
+adamantium + adamantium = adamantium bar
+elementium + runite = elementium bar
+runite = rune
+elementium bar + element = infused elementium
+rune + infused elementium = lesser rune
+magicka + distilled magic = activated magicka
+runes + activated magicka = greater runes
+dragon bones + activated magicka = dragonic bar
