@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btvfvn0v6h7y6"]
+
+[ext_resource type="PackedScene" uid="uid://b7tv1u86il75c" path="res://scenes/harvest nodes/oak_tree.tscn" id="1_ri4sj"]
+[ext_resource type="PackedScene" uid="uid://ds6u0tutwvoo6" path="res://scenes/tools/axe.tscn" id="2_r2pnv"]
+
+[node name="woodcutting" type="Node3D"]
+
+[node name="axe" parent="." instance=ExtResource("2_r2pnv")]
+transform = Transform3D(0.29715, 0.67963, -0.670675, -0.784683, 0.574024, 0.234026, 0.544035, 0.456726, 0.703866, -0.887922, 0.753316, 0.540593)
+
+[node name="oak tree" parent="." instance=ExtResource("1_ri4sj")]
+
+[connection signal="start_chopping" from="oak tree" to="axe" method="_on_oak_tree_start_chopping"]
+[connection signal="stop_chopping" from="oak tree" to="axe" method="_on_oak_tree_stop_chopping"]

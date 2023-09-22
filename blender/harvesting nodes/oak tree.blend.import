@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7couadiwehly"
-path="res://.godot/imported/logo_ready.blend-90f58521d4f7cb3ec2c885ddd1139466.scn"
+uid="uid://osm51eoj54k0"
+path="res://.godot/imported/oak tree.blend-bcd89bf919ae211dffae0bd18af9aa9a.scn"
 
 [deps]
 
-source_file="res://blender/logo_ready.blend"
-dest_files=["res://.godot/imported/logo_ready.blend-90f58521d4f7cb3ec2c885ddd1139466.scn"]
+source_file="res://blender/harvesting nodes/oak tree.blend"
+dest_files=["res://.godot/imported/oak tree.blend-bcd89bf919ae211dffae0bd18af9aa9a.scn"]
 
 [params]
 

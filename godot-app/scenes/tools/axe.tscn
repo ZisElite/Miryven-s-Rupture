@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds6u0tutwvoo6"]
+
+[ext_resource type="Script" path="res://scripts/axe.gd" id="2_fmgx5"]
+[ext_resource type="Material" path="res://materials/tools/handle.material" id="2_qujyl"]
+[ext_resource type="ArrayMesh" uid="uid://bgcabpvt8ebh" path="res://meshes/axe head.res" id="3_0ito4"]
+[ext_resource type="Material" path="res://materials/mining/minerals/copper.material" id="3_eulou"]
+[ext_resource type="ArrayMesh" uid="uid://x8mddl2tjajb" path="res://meshes/axe shaft.res" id="5_bnfn7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tro7d"]
+size = Vector3(0.018967, 0.227385, 0.0398027)
+
+[sub_resource type="Animation" id="Animation_irrcj"]
+resource_name = "chop"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parent:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.16502, 0, 0), Vector3(-0.98027, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pitwm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parent:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3cxi"]
+_data = {
+"RESET": SubResource("Animation_pitwm"),
+"chop": SubResource("Animation_irrcj")
+}
+
+[node name="axe" type="Node3D"]
+script = ExtResource("2_fmgx5")
+
+[node name="parent" type="Node3D" parent="."]
+
+[node name="head" type="MeshInstance3D" parent="parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.930848, -0.0611537)
+material_override = ExtResource("3_eulou")
+mesh = ExtResource("3_0ito4")
+skeleton = NodePath("../..")
+
+[node name="shaft" type="MeshInstance3D" parent="parent"]
+material_override = ExtResource("2_qujyl")
+mesh = ExtResource("5_bnfn7")
+skeleton = NodePath("../..")
+
+[node name="body" type="Area3D" parent="parent"]
+
+[node name="collide" type="CollisionShape3D" parent="parent/body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901074, -0.310469)
+shape = SubResource("BoxShape3D_tro7d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y3cxi")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
