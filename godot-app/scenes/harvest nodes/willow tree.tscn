@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7tv1u86il75c"]
+[gd_scene load_steps=11 format=3 uid="uid://cv3221f3c20ev"]
 
-[ext_resource type="Script" path="res://scripts/tree harvest.gd" id="1_ovky7"]
-[ext_resource type="Material" uid="uid://jhw1swh5c0gd" path="res://materials/woodcutting/oak trunk.material" id="2_va61h"]
-[ext_resource type="Material" uid="uid://m076s4mxk6q1" path="res://materials/woodcutting/oak leaves.material" id="3_2502j"]
+[ext_resource type="Script" path="res://scripts/tree harvest.gd" id="1_e0vx8"]
+[ext_resource type="Material" uid="uid://dmc4emnndke0o" path="res://materials/woodcutting/willow leaves.material" id="2_yprvx"]
+[ext_resource type="Material" uid="uid://d0in8vv8lfopr" path="res://materials/woodcutting/willow trunk.material" id="3_snc3m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bp74x"]
 
@@ -71,16 +71,16 @@ shadow_mesh = SubResource("ArrayMesh_oeoko")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pf31"]
 size = Vector3(0.571326, 1, 0.577357)
 
-[node name="oak tree" type="Node3D"]
-script = ExtResource("1_ovky7")
+[node name="willow tree" type="Node3D"]
+script = ExtResource("1_e0vx8")
 
 [node name="leaves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47053, 0)
-material_override = ExtResource("3_2502j")
+material_override = ExtResource("2_yprvx")
 mesh = SubResource("ArrayMesh_n5dsh")
 
 [node name="trunk" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_va61h")
+material_override = ExtResource("3_snc3m")
 mesh = SubResource("ArrayMesh_mq7wx")
 
 [node name="Area3D" type="Area3D" parent="."]

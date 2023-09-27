@@ -1,14 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://btvfvn0v6h7y6"]
+[gd_scene load_steps=10 format=3 uid="uid://btvfvn0v6h7y6"]
 
 [ext_resource type="PackedScene" uid="uid://b7tv1u86il75c" path="res://scenes/harvest nodes/oak_tree.tscn" id="1_ri4sj"]
+[ext_resource type="Script" path="res://scripts/woodcutting manager.gd" id="1_x6cf7"]
 [ext_resource type="PackedScene" uid="uid://ds6u0tutwvoo6" path="res://scenes/tools/axe.tscn" id="2_r2pnv"]
+[ext_resource type="PackedScene" uid="uid://cv3221f3c20ev" path="res://scenes/harvest nodes/willow tree.tscn" id="4_hvs58"]
+[ext_resource type="PackedScene" uid="uid://do2bfcfepci8j" path="res://scenes/harvest nodes/teak tree.tscn" id="5_aemk0"]
+[ext_resource type="PackedScene" uid="uid://boqrnuc2u0hky" path="res://scenes/harvest nodes/maple tree.tscn" id="6_5bqyi"]
+[ext_resource type="PackedScene" uid="uid://b57ew74e1tvr8" path="res://scenes/harvest nodes/mahogany tree.tscn" id="7_7aw6m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dhc5f"]
+radius = 1.03675
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xd8ut"]
+height = 1.47379
+radius = 0.33926
 
 [node name="woodcutting" type="Node3D"]
+script = ExtResource("1_x6cf7")
 
 [node name="axe" parent="." instance=ExtResource("2_r2pnv")]
 transform = Transform3D(0.29715, 0.67963, -0.670675, -0.784683, 0.574024, 0.234026, 0.544035, 0.456726, 0.703866, -0.887922, 0.753316, 0.540593)
 
-[node name="oak tree" parent="." instance=ExtResource("1_ri4sj")]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[connection signal="start_chopping" from="oak tree" to="axe" method="_on_oak_tree_start_chopping"]
-[connection signal="stop_chopping" from="oak tree" to="axe" method="_on_oak_tree_stop_chopping"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47082, 0)
+shape = SubResource("SphereShape3D_dhc5f")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711082, 0)
+shape = SubResource("CylinderShape3D_xd8ut")
+
+[node name="trees" type="Node" parent="."]
+
+[node name="oak tree" parent="trees" instance=ExtResource("1_ri4sj")]
+
+[node name="willow tree" parent="trees" instance=ExtResource("4_hvs58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13475, 0, 0)
+
+[node name="teak tree" parent="trees" instance=ExtResource("5_aemk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28445, 0, 0)
+
+[node name="maple tree" parent="trees" instance=ExtResource("6_5bqyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29199, 0, 0)
+
+[node name="mahogany tree" parent="trees" instance=ExtResource("7_7aw6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43002, 0, 0)
+
+[connection signal="activate" from="." to="axe" method="_on_woodcutting_activate"]
+[connection signal="regenerating" from="." to="axe" method="_on_woodcutting_regenerating"]
+[connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]
+[connection signal="start_chopping" from="trees/oak tree" to="." method="_on_oak_tree_start_chopping"]
+[connection signal="stop_chopping" from="trees/oak tree" to="." method="_on_oak_tree_stop_chopping"]
+[connection signal="start_chopping" from="trees/willow tree" to="." method="_on_willow_tree_start_chopping"]
+[connection signal="stop_chopping" from="trees/willow tree" to="." method="_on_willow_tree_stop_chopping"]
+[connection signal="start_chopping" from="trees/teak tree" to="." method="_on_teak_tree_start_chopping"]
+[connection signal="stop_chopping" from="trees/teak tree" to="." method="_on_teak_tree_stop_chopping"]
+[connection signal="start_chopping" from="trees/maple tree" to="." method="_on_maple_tree_start_chopping"]
+[connection signal="stop_chopping" from="trees/maple tree" to="." method="_on_maple_tree_stop_chopping"]
+[connection signal="start_chopping" from="trees/mahogany tree" to="." method="_on_mahogany_tree_start_chopping"]
+[connection signal="stop_chopping" from="trees/mahogany tree" to="." method="_on_mahogany_tree_stop_chopping"]

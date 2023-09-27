@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7tv1u86il75c"]
+[gd_scene load_steps=11 format=3 uid="uid://do2bfcfepci8j"]
 
-[ext_resource type="Script" path="res://scripts/tree harvest.gd" id="1_ovky7"]
-[ext_resource type="Material" uid="uid://jhw1swh5c0gd" path="res://materials/woodcutting/oak trunk.material" id="2_va61h"]
-[ext_resource type="Material" uid="uid://m076s4mxk6q1" path="res://materials/woodcutting/oak leaves.material" id="3_2502j"]
+[ext_resource type="Script" path="res://scripts/tree harvest.gd" id="1_3s5ma"]
+[ext_resource type="Material" uid="uid://dq6j4ae5pq7w4" path="res://materials/woodcutting/teak leaves.material" id="2_rbtea"]
+[ext_resource type="Material" uid="uid://ctkaxrmjn6p84" path="res://materials/woodcutting/teak trunk.material" id="3_7s8ye"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bp74x"]
 
@@ -71,16 +71,16 @@ shadow_mesh = SubResource("ArrayMesh_oeoko")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pf31"]
 size = Vector3(0.571326, 1, 0.577357)
 
-[node name="oak tree" type="Node3D"]
-script = ExtResource("1_ovky7")
+[node name="teak tree" type="Node3D"]
+script = ExtResource("1_3s5ma")
 
 [node name="leaves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47053, 0)
-material_override = ExtResource("3_2502j")
+material_override = ExtResource("2_rbtea")
 mesh = SubResource("ArrayMesh_n5dsh")
 
 [node name="trunk" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_va61h")
+material_override = ExtResource("3_7s8ye")
 mesh = SubResource("ArrayMesh_mq7wx")
 
 [node name="Area3D" type="Area3D" parent="."]
