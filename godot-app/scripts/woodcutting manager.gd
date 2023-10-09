@@ -1,6 +1,6 @@
 extends Node3D
 
-var trees = [null, null, null, null, null]
+var trees = {}
 
 var active_tree = null
 var active_skill = false

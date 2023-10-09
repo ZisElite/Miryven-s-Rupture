@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqteiv4liij8w"]
+[gd_scene load_steps=8 format=3 uid="uid://dqteiv4liij8w"]
 
 [ext_resource type="PackedScene" uid="uid://r43lgxbryhkh" path="res://scenes/ui/root ui.tscn" id="1_e4vbw"]
 [ext_resource type="PackedScene" uid="uid://btvfvn0v6h7y6" path="res://scenes/skills/woodcutting.tscn" id="2_adgq7"]
+[ext_resource type="Script" path="res://scripts/data.gd" id="3_cx0x4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c5bpc"]
 sky_curve = 0.0568394
@@ -28,3 +29,6 @@ attributes = SubResource("CameraAttributesPhysical_fo8or")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.917796, 0.397052, 0, -0.397052, 0.917796, 0, 4.45405, 3.90283)
+
+[node name="data" type="Node" parent="."]
+script = ExtResource("3_cx0x4")
